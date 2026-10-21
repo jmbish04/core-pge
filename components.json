@@ -22,7 +22,7 @@
   "menuAccent": "subtle",
   "registries": {
     "@reui": {
-      "url": "https://reui.io/r/{style}/{name}.json",
+      "url": "https://reui.io/r/styles/{style}/{name}.json?v=dpl_4C5DY91wSJwdWj5LM1Y1j4j7x12J",
       "headers": {
         "Authorization": "Bearer ${REUI_LICENSE_KEY}"
       }
