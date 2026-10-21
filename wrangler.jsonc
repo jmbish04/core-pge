@@ -177,6 +177,27 @@
       "migrations_dir": "drizzle",
     },
   ],
+  // PG&E / Rainforest EAGLE data lives in Postgres on Proxmox LXC 126 (the ecoflow
+  // stack): eagle-ingest polls the EAGLE-200 every 15 s into meter_readings.
+  // Reached through Workers VPC (Cloudflare's recommended private-database path),
+  // not a tunnel public hostname + Access token:
+  //   VPC service ecoflow-postgres-vpc (01a160d6…) -> postgres:5432 via tunnel ecoflow-hacolby,
+  //   TLS verification disabled (the container's Postgres has no CA-signed cert).
+  //   Hyperdrive pge-postgres-vpc uses that service; caching is OFF because demand
+  //   readings land every 15 s and must not be served stale.
+  "hyperdrive": [
+    {
+      "binding": "PGE_DB",
+      "id": "61c58d36c3d245c0b8f2a839f9b42bdc",
+    },
+  ],
+  "vpc_services": [
+    {
+      "binding": "PGE_PG_VPC",
+      "service_id": "01a160d6-4d0a-7c61-bd7a-0d272c17cf61",
+      "remote": true,
+    },
+  ],
   "secrets_store_secrets": [
     {
       "binding": "GITHUB_TOKEN",
