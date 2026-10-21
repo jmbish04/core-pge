@@ -165,15 +165,15 @@
   "kv_namespaces": [
     {
       "binding": "SESSIONS",
-      "id": "f47ec3ba218b4613b96258047f21250a",
+      "id": "04d1ea7154c9492e94e8c85ad8f9c7c6",
       "remote": true,
     },
   ],
   "d1_databases": [
     {
       "binding": "DB",
-      "database_name": "core-template-cf-reui",
-      "database_id": "c1452c1a-8dde-4e87-9258-f6a40f315e11",
+      "database_name": "core-pge",
+      "database_id": "b05158f4-72cc-49d7-ad23-7e255afec34d",
       "migrations_dir": "drizzle",
     },
   ],
